@@ -17,9 +17,15 @@ body{
     margin-right: 15%;
 }
 
+/*
 iframe{
     padding-left: 20%;
     padding-right: 20%;
+}
+*/
+
+h2{
+    text-align: center;
 }
 
 .map{

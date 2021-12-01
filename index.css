@@ -43,6 +43,12 @@ div, ul, li {
 a {
     text-decoration:none;
 }
+.list-group{
+    position: absolute;
+    width: 180px;
+    margin-top: 300px;
+    left: 30px;
+}
 
 .quickmenu {
     position:absolute;

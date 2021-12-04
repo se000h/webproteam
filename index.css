@@ -5,6 +5,27 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InfinitySans-RegularA1';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dongle-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108_2@1.0/Dongle-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     font-family: 'KOTRAHOPE';
 
@@ -89,4 +110,9 @@ a {
 }
 .quickmenu ul li:last-child {
     border-bottom:0;
+}
+
+.image{
+    align-items: center;
+
 }

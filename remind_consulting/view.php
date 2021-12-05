@@ -63,7 +63,7 @@ $_date = date_format($date, "Y년 m월 d일 H:i:s");
     <div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">이메일</span>
-            <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $phonenum ?>">
+            <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $email ?>">
             <span class="input-group-text">@</span>
             <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $emailadr ?>">
         </div>

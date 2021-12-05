@@ -1,101 +1,86 @@
 <?php
-    session_start();
-    include_once "./common/_dbc.php";
-    include_once "./common/_lib.php";
-    include_once "./inc/_head.php";
+session_start();
+include_once "./common/_dbc.php";
+include_once "./common/_lib.php";
+include_once "./inc/_head.php";
 
-    /*  
+/*  
         보안 강화 이전 도메인 추적 코드
         $refer = $_SERVER["HTTP_REFERER"];
         $addr_devider = explode("/", $refer);
         echo $addr_devider[sizeof($addr_devider) - 1];
     */
-    
-    $lockId = $_SESSION["aliver"];
-    $id = $_GET["id"];
-    $page = $_GET["page"];
 
-    $vtmt = $db->prepare("UPDATE `consulting` SET view = view + 1 WHERE uid = :id");
-    $vtmt->bindParam(":id", $id, PDO::PARAM_INT);
-    $vtmt->execute();
+$lockId = $_SESSION["aliver"];
+$id = $_GET["id"];
+$page = $_GET["page"];
 
-    $stmt = $db->prepare("SELECT name, subject, contents, view, regdate, secure FROM `consulting` WHERE uid = :id");
-    $stmt->bindParam(":id", $id, PDO::PARAM_INT);
-    $stmt->execute();
-    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+$vtmt = $db->prepare("UPDATE `consulting` SET view = view + 1 WHERE uid = :id");
+$vtmt->bindParam(":id", $id, PDO::PARAM_INT);
+$vtmt->execute();
 
-    $name = $row['name'];
-    $subject = $row['subject'];
-    $contents = $row['contents'];
-    $view = $row['view'];
-    $regdate = $row['regdate'];
-    $secure = $row['secure'];
+$stmt = $db->prepare("SELECT name, subject, contents, view, regdate, secure, phonenum, email, emailadr FROM `consulting` WHERE uid = :id");
+$stmt->bindParam(":id", $id, PDO::PARAM_INT);
+$stmt->execute();
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ((bool) $secure) {
+$name = $row['name'];
+$subject = $row['subject'];
+$contents = $row['contents'];
+$view = $row['view'];
+$regdate = $row['regdate'];
+$phonenum = $row['phonenum'];
+$email = $row['email'];
+$emailadr = $row['emailadr'];
 
-        $checkId = "view".$id;
-        $lockIcon = "<i class='material-icons'>lock</i>";
+if ((bool) $secure) {
 
-        if (empty($lockId) || $lockId != $checkId) {
-            warn_back("잘못된 접근입니다.");
-        }
+    $checkId = "view" . $id;
+    $lockIcon = "<i class='material-icons'>lock</i>";
+
+    if (empty($lockId) || $lockId != $checkId) {
+        warn_back("잘못된 접근입니다.");
     }
+}
 
-    $contents = nl2br($contents);
+$contents = nl2br($contents);
 
-    $date = date_create($regdate);
-    $_date = date_format($date, "Y년 m월 d일 H:i:s");
+$date = date_create($regdate);
+$_date = date_format($date, "Y년 m월 d일 H:i:s");
 ?>
 
-<div class="container">
-    <div class="content row">
+<div>
+    <!----------------------------------------게시판 글 보기------------------------------------>
+    <h2>견적상담 글쓰기</h2>
+    <br>
 
-        <?php include_once "./inc/_nav.php"; ?>
-
-        <section class="view col-10">
-   
-            <div class="bb_subject">
-                <?=$lockIcon?>
-                <?=$subject?>
-            </div>
-            <div class="bb_name">
-                <span>
-                    <i class="material-icons">person</i>
-                    <?=$name?>
-                </span>
-                <span class='right'>
-                    <i class="material-icons">visibility</i>
-                    <?=$view?>
-                </span>
-            </div>
-            <div class="bb_contents">
-                <?=$contents?>
-            </div>
-            <div class="bb_date">
-                <span>
-                    <i class="material-icons">date_range</i> 
-                    <?=$_date?>
-                </span>
-            </div>
-
-            <div class="bb_btns">
-                <a href="./password.php?id=<?=$id?>&page=<?=$page?>&mode=modify" class='btn btn-secondary'>수정</a>
-                <a href="./delete.php?id=<?=$id?>&page=<?=$page?>" class='btn btn-secondary'>삭제</a>
-                <a href="./consulting.php?page=<?=$page?>" class='btn btn-secondary'>목록</a>
-            </div>
-         
-        </section>
-
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">성함</span>
+        <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $email ?>">
+        <span class="input-group-text" id="basic-addon1">전화번호</span>
+        <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $phonenum ?>">
+    </div>
+    <div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">이메일</span>
+            <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $phonenum ?>">
+            <span class="input-group-text">@</span>
+            <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $emailadr ?>">
+        </div>
+        <span class="input-group-text" id="basic-addon1">작성일</span>
+        <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $_date ?>">
+        <div class="form-floating">
+            <textarea readonly class="form-control" style="height: 350px; background-color: white" id="floatingTextarea2"></textarea>
+            <label for="floatingTextarea2"><?= $contents ?></label>
+        </div>
+    </div>
+    <br>
+    <div class="bb_btns">
+        <!-- <a href="./password.php?id=<?= $id ?>&page=<?= $page ?>&mode=modify" class='btn btn-secondary'>수정</a> -->
+        <a href="./delete.php?id=<?= $id ?>&page=<?= $page ?>" class='btn btn-secondary'>삭제</a>
+        <a href="./consulting.php?page=<?= $page ?>" class='btn btn-secondary'>목록</a>
     </div>
 </div>
-
 <?php
-   include_once "./inc/_tail.php";
-
-/*
-참고할 곳
-
-PHP 게시판 :: 8화 view 작업. ( paging 오류 수정 ) >> https://blog.naver.com/psj9102/221349875379
-PHP 게시판 :: 9화 버튼 및 password.php >> https://blog.naver.com/psj9102/221349875379
-*/
+include_once "./inc/_tail.php";
 ?>

@@ -22,7 +22,7 @@ try {
     $result = $dtmt->execute();
 
     if ($result) {
-        _goto("/remind/?page=".$page);
+        _goto("/remind_consulting/consulting.php?page=".$page);
     } else {
         print_r($db->errorInfo());
     }

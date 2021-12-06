@@ -26,10 +26,25 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     font-family: 'KOTRAHOPE';
 
 }
+
 
 .page{
     border: 10px solid white;
@@ -111,3 +126,31 @@ a {
 .quickmenu ul li:last-child {
     border-bottom:0;
 }
+
+/*
+.floating { 
+    background-color:#f9f9f9; 
+    border:2px solid #000; 
+    position: fixed; 
+    right: 50%; 
+    top: 180px; 
+    margin-right: -615px; 
+    text-align:center; 
+    width:70px; 
+    border-radius: 8px; 
+    -webkit-border-radius: 8px; 
+} 
+.floating div:nth-child(1){ 
+    border:2px solid #ff3535; 
+    border-radius: 8px; 
+} 
+.floating div:nth-child(2){ 
+    border:2px solid #ff3535; 
+    border-radius: 8px; 
+} 
+.floating div:nth-child(3){ 
+    border:2px 
+    solid #ff3535; 
+    border-radius: 8px; 
+}
+*/

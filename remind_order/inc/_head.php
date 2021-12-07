@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>인쇄마을 견적상담게시판</title>
+    <title>인쇄마을 주문게시판</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +29,8 @@
     <div class="page" id="top">
         <div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">견적상담게시판</li>
-                <li class="list-group-item">견적상담글쓰기</li>
+                <li class="list-group-item">주문게시판</li>
+                <li class="list-group-item">주문글쓰기</li>
             </ul>
         </div>
 
@@ -45,8 +45,8 @@
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li><a href=".././introduce.html" class="nav-link px-2 link-dark">회사소개</a></li>
                     <li><a href="../index.html#photo" class="nav-link px-2 link-dark">인쇄품목</a></li>
-                    <li><a href="./consulting.php" class="nav-link px-2 link-secondary">견적상담게시판</a></li>
-                    <li><a href=".././remind_order/ordering.php" class="nav-link px-2 link-dark">주문게시판</a></li>
+                    <li><a href="../remind_consulting/consulting.php" class="nav-link px-2 link-dark">견적상담게시판</a></li>
+                    <li><a href="./ordering.php" class="nav-link px-2 link-secondary">주문게시판</a></li>
                     <li><a href=".././map.html" class="nav-link px-2 link-dark">찾아오시는길</a></li>
             </header>
         </div>

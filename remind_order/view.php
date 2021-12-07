@@ -15,11 +15,11 @@ $lockId = $_SESSION["aliver"];
 $id = $_GET["id"];
 $page = $_GET["page"];
 
-$vtmt = $db->prepare("UPDATE `consulting` SET view = view + 1 WHERE uid = :id");
+$vtmt = $db->prepare("UPDATE `ordering` SET view = view + 1 WHERE uid = :id");
 $vtmt->bindParam(":id", $id, PDO::PARAM_INT);
 $vtmt->execute();
 
-$stmt = $db->prepare("SELECT name, subject, contents, view, regdate, secure, phonenum, email, emailadr FROM `consulting` WHERE uid = :id");
+$stmt = $db->prepare("SELECT name, subject, contents, view, regdate, secure, phonenum, email, emailadr, item, size, count  FROM `ordering` WHERE uid = :id");
 $stmt->bindParam(":id", $id, PDO::PARAM_INT);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -32,6 +32,10 @@ $regdate = $row['regdate'];
 $phonenum = $row['phonenum'];
 $email = $row['email'];
 $emailadr = $row['emailadr'];
+$item = $row['item'];
+$size = $row['size'];
+$count = $row['count'];
+
 
 if ((bool) $secure) {
 
@@ -51,7 +55,7 @@ $_date = date_format($date, "Y년 m월 d일 H:i:s");
 
 <div>
     <!----------------------------------------게시판 글 보기------------------------------------>
-     <h2><?= $subject ?></h2> <!-- 글 제목  -->
+    <h2><?= $subject ?></h2>
     <br>
 
     <div class="input-group mb-3">
@@ -68,20 +72,29 @@ $_date = date_format($date, "Y년 m월 d일 H:i:s");
             <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $emailadr ?>">
         </div>
         <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">작성일</span>
-            <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $_date ?>">
+            <label class="input-group-text" for="inputGroupSelect01">인쇄품목</label>
+            <input type="text" style="background-color: white" readonly class="form-control" aria-label="Server" placeholder="<?= $item ?>">
+            <label class="input-group-text" for="inputGroupSelect01">책자 사이즈</label>
+            <input type="text" style="background-color: white" readonly class="form-control" aria-label="Server" placeholder="<?= $size ?>">
         </div>
-        
-        <div class="form-floating">
-            <textarea readonly class="form-control" style="height: 350px; background-color: white" id="floatingTextarea2"></textarea>
-            <label for="floatingTextarea2"><?= $contents ?></label>
+        <div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">수량</span>
+                <input type="text" style="background-color: white" readonly class="form-control" placeholder="<?= $count ?>" aria-label="Username" aria-describedby="basic-addon1" placeholder="<?= $count ?>">
+                <span class="input-group-text" id="basic-addon1">작성일</span>
+                <input type="text" style="background-color: white" readonly class="form-control" aria-label="Username" placeholder="<?= $_date ?>">
+            </div>
+            <div class="form-floating">
+                <textarea readonly class="form-control" style="height: 350px; background-color: white" id="floatingTextarea2"></textarea>
+                <label for="floatingTextarea2"><?= $contents ?></label>
+            </div>
         </div>
     </div>
     <br>
     <div class="bb_btns">
         <!-- <a href="./password.php?id=<?= $id ?>&page=<?= $page ?>&mode=modify" class='btn btn-secondary'>수정</a> -->
         <a href="./delete.php?id=<?= $id ?>&page=<?= $page ?>" class='btn btn-secondary'>삭제</a>
-        <a href="./consulting.php?page=<?= $page ?>" class='btn btn-secondary'>목록</a>
+        <a href="./ordering.php?page=<?= $page ?>" class='btn btn-secondary'>목록</a>
     </div>
 </div>
 <?php

@@ -40,6 +40,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'establishRoomNo703OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     font-family: 'KOTRAHOPE';
 
@@ -91,7 +98,7 @@ a {
     width:125px;
     top:25%;
     margin-top:-50px;
-    right:10px;
+    right:50px;
     background:#fff;
 }
 .quickmenu ul {

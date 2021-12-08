@@ -161,3 +161,11 @@ a {
     border-radius: 8px; 
 }
 */
+
+.side_menu{
+    position:absolute;
+    width:125px;
+    left:0px;
+    margin-top:-150px;
+    background:#fff;
+}

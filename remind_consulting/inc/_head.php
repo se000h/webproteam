@@ -27,12 +27,6 @@
 
 <body>
     <div class="page" id="top">
-        <div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">견적상담게시판</li>
-                <li class="list-group-item">견적상담글쓰기</li>
-            </ul>
-        </div>
 
         <!------------------------------------- 메뉴바 ------------------------------------->
 
@@ -57,7 +51,6 @@
 
         <div class="quickmenu">
             <ul>
-                <li><a href="#">최근 본 상품</a></li>
                 <li><a href="#">전화연결</a></li>
                 <li><a href="#top">위로</a></li>
                 <li><a href="#bottom">아래로</a></li>

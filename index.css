@@ -56,8 +56,8 @@ body{
 .page{
     border: 10px solid white;
     background-color: white;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 /*
@@ -98,7 +98,7 @@ a {
     width:125px;
     top:25%;
     margin-top:-50px;
-    right:50px;
+    right:20px;
     background:#fff;
 }
 .quickmenu ul {

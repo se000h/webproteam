@@ -52,7 +52,7 @@
 
         <div class="quickmenu">
             <ul>
-                <li><a href="#">전화연결</a></li>
+                <li><a href="consult">FAQ</a></li>
                 <li><a href="#top">위로</a></li>
                 <li><a href="#bottom">아래로</a></li>
             </ul>

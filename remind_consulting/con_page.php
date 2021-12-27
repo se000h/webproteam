@@ -8,7 +8,7 @@ $ptmt->execute();
 $size = $ptmt->fetch(PDO::FETCH_ASSOC);
 $nums = $size["size"];
  
-$listSize = 5;
+$listSize = 10;
 $blockSize = 10;
 
 $start = ($page - 1) * $listSize;

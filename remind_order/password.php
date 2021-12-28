@@ -5,7 +5,7 @@
     $page = $_GET['page'];
     $mode = $_GET['mode'];
 ?>
-<div class="container">
+<div class="container text-center">
     <div class="content row">
 
         <?php include_once "./inc/_nav.php"; ?>

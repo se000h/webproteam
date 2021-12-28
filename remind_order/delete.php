@@ -23,6 +23,7 @@
                 </div>
 
                 <div>
+                    </br>
                     <button type="submit" class="btn btn-primary">확인</button>
                     <button type="button" class="btn btn-secondary" onClick="history.back(-1);">뒤로가기</button>
                 </div>

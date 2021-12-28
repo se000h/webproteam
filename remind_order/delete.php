@@ -4,7 +4,7 @@
     $id = $_GET["id"];
     $page = $_GET['page'];
 ?>
-<div class="container">
+<div class="container text-center">
     <div class="content row">
 
         <?php include_once "./inc/_nav.php"; ?>
@@ -13,7 +13,7 @@
 
             <form action="deleteDo.php" method="POST" id="passwd_form">
                 <div class="pass_title">
-                    삭제를 위해 패스워드를 입력해주세요.
+                    삭제를 위해 패스워드를 입력해주세요.</br>
                 </div>
 
                 <div class="pass_input">

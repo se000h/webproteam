@@ -32,7 +32,7 @@
 }
 </style>
 
-<div class="node-modal">
+<div class="node-modal text-center">
     <div class="node-bg" ></div>
     <div class="node-modal-content">
         <form id="passwd_form">

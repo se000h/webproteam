@@ -36,7 +36,7 @@
     <div class="node-bg" ></div>
     <div class="node-modal-content">
         <form id="passwd_form">
-            <div class='pd-8'>
+            <div class='pd-8 text-center'>
                 <label for="bb_passwd">* 패스워드를 입력해주세요.</label>
                 <input type="password" name="bb_passwd" id="bb_passwd" />
                 <input type="hidden" name="id" id="modal-ids" />

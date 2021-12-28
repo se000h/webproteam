@@ -59,20 +59,46 @@
     <!----------------------------------------회사소개란------------------------------------>
     <div>
       <h2>회사소개</h2>
+      <br>
+
+      
       <center>
-      <img src="image\photo\introduce.jpg" width="60%">
-      <h4 >
-        <br>
-        인쇄마을은 23년간 많은 관공서와 기업체와의 협업을 통해 다양한 종류의 인쇄물을 제작하고 있습니다. 
-        <br>
-        다년간의 노하우를 통해 고객이 원하는 최상의 디자인 및 편집을 제공하며, 
-        <br>
-        고객과 원활한 소통으로 고객의 니즈를 충분히 만족시키기 위해 노력하고 있습니다.
-        <br>
-        문의 사항이 있으시면 언제든 편하게 연락 주십시오. 
-        <br>
-        찾아 주셔서 감사합니다.</h3>
-        <hr>
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+          </div>
+    
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <img class="bd-placeholder-img" width="100%" src="image/인쇄마을사진.jpeg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></img>
+            </div>
+            <div class="carousel-item active">
+              <img class="bd-placeholder-img" width="100%" src="image\photo\introduce.jpg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></img>
+            </div>
+          </div>
+    
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+
+        <h4>
+          <br>
+          인쇄마을은 23년간 많은 관공서와 기업체와의 협업을 통해 다양한 종류의 인쇄물을 제작하고 있습니다. 
+          <br>
+          다년간의 노하우를 통해 고객이 원하는 최상의 디자인 및 편집을 제공하며, 
+          <br>
+          고객과 원활한 소통으로 고객의 니즈를 충분히 만족시키기 위해 노력하고 있습니다.
+          <br>
+          문의 사항이 있으시면 언제든 편하게 연락 주십시오. 
+          <br>
+          찾아 주셔서 감사합니다.
+        </h4>
       </center>
       </label>
     </div>
@@ -81,6 +107,8 @@
 
 
   <!------------------------------------- 하단바 ------------------------------------->
+
+  <ul class="nav justify-content-center border-bottom pb-3 mb-3"></ul>
 
   <div class="container" id="bottom">
     <footer class="py-3 my-4">

@@ -9,7 +9,7 @@
 
         <?php include_once "./inc/_nav.php"; ?>
 
-        <section class="col-10">
+        
 
             <form action="deleteDo.php" method="POST" id="passwd_form">
                 <div class="pass_title">
@@ -30,6 +30,6 @@
                 </div>
 
             </form>
-        </section>
+        
     </div>
 </div>

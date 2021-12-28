@@ -13,8 +13,9 @@
 
             <form action="deleteDo.php" method="POST" id="passwd_form">
                 <div class="pass_title">
-                    삭제를 위해 패스워드를 입력해주세요.</br>
+                    삭제를 위해 패스워드를 입력해주세요.
                 </div>
+                </br>
 
                 <div class="pass_input">
                     <input type="password" name="del_passwd" required />
